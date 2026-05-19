@@ -41,14 +41,14 @@ public:
     TArray &operator=(const TArray &) = default;
 
     inline T &operator[](int i) { return (IsValid() && IsValidIndex(i)) ? Data[i] : T(); };
-    inline const T &operator[](int i) const { (IsValid() && IsValidIndex(i)) ? Data[i] : T(); }
+    inline const T &operator[](int i) const { return (IsValid() && IsValidIndex(i)) ? Data[i] : T(); }
 
     inline explicit operator bool() const { return IsValid(); };
 
     inline bool IsValid() const { return Data != nullptr; }
     inline bool IsValidIndex(int i) const { return i >= 0 && i < NumElements; }
 
-    inline int Slack() const { return NumElements - MaxElements; }
+    inline int Slack() const { return MaxElements - NumElements; }
 
     inline int Num() const { return NumElements; }
     inline int Max() const { return MaxElements; }
