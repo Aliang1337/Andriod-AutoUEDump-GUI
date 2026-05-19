@@ -48,7 +48,7 @@ public:
     inline bool IsValid() const { return Data != nullptr; }
     inline bool IsValidIndex(int i) const { return i >= 0 && i < NumElements; }
 
-    inline int Slack() const { return NumElements - MaxElements; }
+    inline int Slack() const { return MaxElements - NumElements; }
 
     inline int Num() const { return NumElements; }
     inline int Max() const { return MaxElements; }
