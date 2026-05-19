@@ -41,7 +41,7 @@ public:
     TArray &operator=(const TArray &) = default;
 
     inline T &operator[](int i) { return (IsValid() && IsValidIndex(i)) ? Data[i] : T(); };
-    inline const T &operator[](int i) const { (IsValid() && IsValidIndex(i)) ? Data[i] : T(); }
+    inline const T &operator[](int i) const { return (IsValid() && IsValidIndex(i)) ? Data[i] : T(); }
 
     inline explicit operator bool() const { return IsValid(); };
 
